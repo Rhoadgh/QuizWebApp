@@ -1,0 +1,142 @@
+﻿
+@model List<QuizWebApp.Models.Question>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+ </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QnInWords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Option4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr> 
+    </thead>*@
+<div class="container position-absolute top-50 start-50 translate-middle align-middle ">
+        <br />
+        <br />
+
+        <div class="text-center">
+            <h2 class="display-5">Quiz Buzz</h2>
+        </div>
+
+        <br />
+
+        <div  style="padding:30px; text-align:center">Let's see how well you do in this quiz!</div>
+
+        <br />
+
+    <div id="questionSection" class="container row align-middle">
+       
+              @foreach (var item in Model) {
+                  <div class="border container col-5 bg-light" style="padding:30px; border-radius:20px; margin-bottom:20px;">
+                    <div id="question+@item">
+                        <div class="form-group row">
+                            <label> @Html.DisplayFor(modelItem => item.QnInWords)</label>
+                        </div>
+
+                        <br />
+
+                        <div>
+                        <label style="overflow:hidden;" for="A" onclick="answerOnClick(@item.Id, 'A')" id="question+@item+A" class="form-control custom+@item">A)
+                            @Html.DisplayFor(modelItem => item.Option1)
+                        </label>
+                
+                            <label style="overflow:hidden;" for="B" onclick="answerOnClick(@item.Id, 'B')" id="question+@item+B" class="form-control custom+@item">
+                                B)
+                            @Html.DisplayFor(modelItem => item.Option2)
+                        </label>
+            
+                        <label style="overflow:hidden;" for="C" onclick="answerOnClick(@item.Id, 'C')" id="question+@item+C" class="form-control custom+@item">C)
+                        @Html.DisplayFor(modelItem => item.Option3)
+                        </label>
+            
+                        <label style="overflow:hidden;" for="D" onclick="answerOnClick(@item, 'D')" id="question+@item+D" class="form-control custom+@item">D)
+                        @Html.DisplayFor(modelItem => item.Option4)
+                        </label>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <br />
+
+        <div class="form-group row">
+            <div class="col-4 offset-4">
+                <button id="completeBtn" onclick="CompleteQuiz();" class="btn btn-info form-control">Complete the Quiz</button>
+            </div>
+        </div>
+</div>
+
+@* <div style="visibility:hidden">
+    @for(int i=0; i<Model.QuestionDtoList.Count; i++)
+    {
+        <input value="@Model.QuestionDtoList[i].CorrectAnswer" id="correct+@i" />
+    }
+</div> *@
+
+
+
+    @section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/Quiz.js"></script>
+}
+
+
+
+
+
+
+
+
+
+
+
+    @*
+           
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+           
+ </table>
+
+            @Html.DisplayFor(modelItem => item.ImageName)
+
+                @* <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryID)
+                </td> *@
+

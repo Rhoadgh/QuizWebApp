@@ -1,0 +1,147 @@
+﻿ @{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+     <div class="hero_area">
+        <!-- slider section -->
+        <section class="slider_section ">
+            <div class="carousel_btn-container">
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="sr-only"></span>
+                </a>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-5 offset-md-1">
+                                    <div class="detail-box">
+                                        <h1>
+                                            Put Your Knowledge <br>
+                                            to the Test <br>
+                                            Now!
+                                        </h1>
+                                        <p>
+                                            "Unlock Your Knowledge, Unleash the Fun: Dive into our Interactive Quizzes!"
+                                        </p>
+                                        <div class="btn-box">
+                                             <a class="btn-1" id="register" asp-area="Identity" asp-page="/Account/Register">
+                                                Register
+                                                </a>
+                                              <a class="btn-2" id="login" asp-area="Identity" asp-page="/Account/Login">
+                                                Login
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="offset-md-1 col-md-4 img-container">
+                                    <div class="img-box">
+                                        <img src="images/slider-img.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-5 offset-md-1">
+                                    <div class="detail-box">
+                                        <h1>
+                                            Test Your Knowledge <br>
+                                            with <br>
+                                            QuizBuzz!
+                                        </h1>
+                                        <p>
+                                            "Unlock Your Knowledge, Unleash the Fun: Dive into our Interactive Quizzes!"
+                                        </p>
+                                        <div class="btn-box">
+                                            <a class="btn-1" asp-area="" asp-controller="Participants" asp-action="Create">
+                                                Register
+                                            </a>
+                                            <a href="" class="btn-2">
+                                                Login
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="offset-md-1 col-md-4 img-container">
+                                    <div class="img-box">
+                                        <img src="~/images/hero_area/twothinking.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+        </section>
+        <!-- end slider section -->
+    </div> 
+
+
+    
+        
+
+
+    <!-- experience section -->
+
+    <section class="experience_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="img-box">
+                        <img src="images/experience-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                Looking for a mental workout?
+                            </h2>
+                        </div>
+                        <p>
+                            where learning meets entertainment! Dive into a world of interactive quizzes designed to test your knowledge, challenge your skills, and provide hours of fun. Explore a wide range of categories, from history to pop culture, and unlock your true potential. Join our community of quiz enthusiasts and embark on an exciting journey of self-discovery!
+                        </p>
+                        <div class="btn-box text-center">
+                             <a class="btn-1" asp-area="" asp-controller="Categories" asp-action="Index">
+                                GET STARTED!
+                            </a>
+                            
+                            @* <a href="" class="btn-2">
+                                Hire
+                            </a> *@
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- end experience section -->
+
+</body>
+
+</html>
+ 

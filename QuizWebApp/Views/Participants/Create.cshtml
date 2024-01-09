@@ -1,0 +1,56 @@
+﻿@model QuizWebApp.Models.Participant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+@* <h1>Create</h1>
+
+<h4>Participant</h4>
+<hr /> *@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="~/images/login&register/computer login-rafiki.png"
+                     class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-outline mb-4">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    
+                    
+                    <div class="form-group text-center text-lg-start mt-4 pt-2">
+                        <input type="submit" value=" Register" class="btn-2 btn btn-info" role="button"
+                               asp-area="" asp-controller="Home" asp-action="Index"/>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">
+                            Already have an account? <a href="#!" class=" btn-1">Login</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
